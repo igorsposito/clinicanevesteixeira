@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Instituto Saúde Mental Neves Teixeira | Tratamento de Dependência Química e Alcoolismo</title>
+<meta name="description" content="Há mais de 12 anos tratando dependência química, alcoolismo e saúde mental com acolhimento, equipe multidisciplinar e acompanhamento médico e psiquiátrico. Unidades feminina e masculina.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,500;6..12,600;6..12,700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#253D6D;
+    --blue-deep:#1A2D52;
+    --blue-soft:#E9EEF6;
+    --red:#DA3134;
+    --red-dark:#B9242A;
+    --white:#FFFFFF;
+    --gray:#F3F5F8;
+    --line:#E3E7EE;
+    --ink:#1B2437;
+    --muted:#5D6678;
+    --green:#25D366;
+    --radius:22px;
+    --shadow:0 22px 50px -24px rgba(37,61,109,.4);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:80px}
+  body{font-family:'Nunito Sans',system-ui,sans-serif;color:var(--ink);background:var(--white);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  .container{width:min(1180px,92%);margin-inline:auto}
+  h1,h2,h3,h4{font-family:'Nunito',system-ui,sans-serif;line-height:1.18;color:var(--blue);font-weight:700}
+  h2{font-size:clamp(1.85rem,3.4vw,2.6rem);letter-spacing:-.01em}
+  .lead{font-size:1.1rem;color:var(--muted);max-width:620px}
+  section{padding:100px 0;position:relative}
+  .bg-white{background:var(--white)}
+  .bg-gray{background:var(--gray)}
+  .bg-blue{background:var(--blue);color:var(--white)}
+  .bg-blue h2,.bg-blue h3,.bg-blue h4{color:var(--white)}
+  .bg-blue .lead{color:rgba(255,255,255,.82)}
+  .section-head{max-width:720px;margin-bottom:3.2rem}
+  .section-head h2{margin-bottom:1rem}
+  .section-head.center{margin-inline:auto;text-align:center}
+  .section-head.center .lead{margin-inline:auto}
+
+  /* Buttons */
+  .btn{display:inline-flex;align-items:center;gap:.6rem;padding:1rem 1.7rem;border-radius:999px;font-weight:700;font-size:1rem;transition:transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease;cursor:pointer;border:none;font-family:'Nunito',sans-serif}
+  .btn:hover{transform:translateY(-3px)}
+  .btn-primary{background:var(--red);color:var(--white);box-shadow:0 14px 28px -12px rgba(218,49,52,.6)}
+  .btn-primary:hover{background:var(--red-dark)}
+  .btn-outline{background:var(--white);color:var(--blue);border:1.5px solid var(--line)}
+  .btn-outline:hover{border-color:var(--blue)}
+  .btn svg{width:20px;height:20px;flex-shrink:0}
+
+  /* Header */
+  header{position:fixed;inset:0 0 auto 0;z-index:50;background:var(--blue);transition:box-shadow .3s ease}
+  header.scrolled{box-shadow:0 8px 28px rgba(0,0,0,.22)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:76px}
+  .logo{display:flex;align-items:center;gap:.75rem;color:var(--white)}
+  .logo-mark{width:48px;height:48px;border-radius:50%;background:var(--white);display:grid;place-items:center;flex-shrink:0}
+  .logo-mark img{width:32px;height:auto}
+  .logo-text{line-height:1.05;font-family:'Nunito',sans-serif}
+  .logo-text small{display:block;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:#FF9EA0}
+  .logo-text strong{font-size:1.1rem;font-weight:800;letter-spacing:.03em}
+  .menu{display:flex;gap:2rem;color:rgba(255,255,255,.85);font-size:.95rem;font-weight:600}
+  .menu a{position:relative}
+  .menu a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:#FF9EA0;transition:width .25s ease}
+  .menu a:hover{color:var(--white)}
+  .menu a:hover::after{width:100%}
+  .nav .btn{padding:.7rem 1.25rem;font-size:.92rem}
+
+  /* ===== HERO ===== */
+  .hero{padding:150px 0 110px;overflow:hidden;background:linear-gradient(180deg,#fff 0%,#F6F8FB 100%)}
+  .hero-bg{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+  .blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55}
+  .blob.b1{width:520px;height:520px;background:#DCE5F3;top:-120px;right:-80px}
+  .blob.b2{width:380px;height:380px;background:#FBE3E3;bottom:-120px;left:-120px;opacity:.6}
+  .grid-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(37,61,109,.09) 1.2px,transparent 1.2px);background-size:26px 26px;mask-image:linear-gradient(90deg,transparent 0%,#000 60%);-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 60%)}
+
+  .hero-grid{position:relative;display:grid;grid-template-columns:1fr 1.05fr;gap:3rem;align-items:center}
+  .hero h1{font-size:clamp(2.35rem,4.6vw,3.6rem);font-weight:800;letter-spacing:-.015em;margin-bottom:1.3rem}
+  .hero h1 span{color:var(--red)}
+  .hero p.sub{font-size:1.15rem;color:var(--muted);max-width:540px}
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2.2rem}
+  .hero-trust{display:flex;align-items:center;gap:1rem;margin-top:2.4rem}
+  .avatars{display:flex}
+  .avatars img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:3px solid var(--white);margin-left:-12px;box-shadow:0 4px 10px rgba(0,0,0,.12)}
+  .avatars img:first-child{margin-left:0}
+  .hero-trust p{font-size:.92rem;color:var(--muted);line-height:1.35}
+  .hero-trust strong{color:var(--blue);font-family:'Nunito',sans-serif}
+
+  /* Hero visual (3D + parallax) */
+  .hero-visual{position:relative;height:560px;perspective:1200px}
+  .layer{position:absolute;will-change:transform;transition:transform .2s linear}
+  .photo-main{inset:30px 40px 40px 70px;border-radius:32px;overflow:hidden;box-shadow:0 40px 80px -30px rgba(37,61,109,.55);transform-style:preserve-3d}
+  .photo-main img{width:100%;height:100%;object-fit:cover;transform:scale(1.08)}
+  .photo-main::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(26,45,82,.45))}
+  .photo-small{width:210px;height:250px;left:0;bottom:0;border-radius:24px;overflow:hidden;border:6px solid var(--white);box-shadow:0 30px 60px -25px rgba(37,61,109,.6)}
+  .photo-small img{width:100%;height:100%;object-fit:cover}
+  .glass{background:rgba(255,255,255,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.9);border-radius:18px;box-shadow:0 20px 40px -18px rgba(37,61,109,.45);padding:1rem 1.2rem;display:flex;align-items:center;gap:.8rem}
+  .glass .ic{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;flex-shrink:0}
+  .glass .ic svg{width:22px;height:22px}
+  .glass strong{display:block;font-family:'Nunito',sans-serif;color:var(--blue);font-size:1.05rem;line-height:1.15}
+  .glass span{font-size:.8rem;color:var(--muted)}
+  .card-years{top:0;right:0}
+  .card-years .ic{background:#FDEBEC;color:var(--red)}
+  .card-safe{right:-10px;bottom:70px}
+  .card-safe .ic{background:var(--blue-soft);color:var(--blue)}
+
+  /* 3D spheres (inspired by the logo dots) */
+  .sphere{border-radius:50%;pointer-events:none}
+  .sphere.red{width:86px;height:86px;top:-12px;left:30px;background:radial-gradient(circle at 32% 28%,#FF9A9C 0%,#E2474A 38%,#B01E24 78%,#8A1419 100%);box-shadow:inset -10px -14px 24px rgba(0,0,0,.25),0 24px 40px -12px rgba(218,49,52,.55)}
+  .sphere.blue{width:120px;height:120px;bottom:40px;right:-40px;background:radial-gradient(circle at 32% 28%,#8FA8D6 0%,#3D5A92 40%,#253D6D 75%,#16264A 100%);box-shadow:inset -12px -16px 28px rgba(0,0,0,.3),0 30px 50px -16px rgba(37,61,109,.6)}
+  .sphere.mini{width:34px;height:34px;top:46%;left:-24px;background:radial-gradient(circle at 32% 28%,#fff 0%,#DCE5F3 45%,#9AB0D3 100%);box-shadow:0 12px 20px -8px rgba(37,61,109,.5)}
+  .ring{width:150px;height:150px;top:70px;left:-10px;border-radius:50%;border:14px solid transparent;background:linear-gradient(#F6F8FB,#F6F8FB) padding-box,linear-gradient(135deg,#DA3134,#FFB0B2 50%,#253D6D) border-box;opacity:.9;transform:rotateX(62deg) rotateZ(-20deg);box-shadow:0 20px 30px -20px rgba(37,61,109,.5)}
+  @keyframes float{0%,100%{translate:0 0}50%{translate:0 -14px}}
+  .floaty{animation:float 6s ease-in-out infinite}
+  .floaty.d2{animation-delay:-2s;animation-duration:7s}
+  .floaty.d3{animation-delay:-4s;animation-duration:5.5s}
+
+  /* Stats strip */
+  .stats{padding:0;margin-top:-50px;z-index:5;background:transparent}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;border:1px solid var(--line)}
+  .stat{padding:1.9rem 1.5rem;text-align:center;border-right:1px solid var(--line)}
+  .stat:last-child{border-right:none}
+  .stat strong{display:block;font-family:'Nunito',sans-serif;font-size:2.2rem;color:var(--red);font-weight:800;line-height:1}
+  .stat span{display:block;margin-top:.5rem;font-size:.92rem;color:var(--muted)}
+
+  /* Family */
+  .family{margin-top:-50px;padding-top:150px}
+  .family-grid{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:center}
+  .stack{position:relative;height:520px}
+  .stack .ph{position:absolute;border-radius:26px;overflow:hidden;box-shadow:var(--shadow)}
+  .stack .ph img{width:100%;height:100%;object-fit:cover}
+  .stack .ph.a{inset:0 90px 70px 0}
+  .stack .ph.b{width:250px;height:250px;right:0;bottom:0;border:6px solid var(--white)}
+  .quote-chip{position:absolute;left:24px;bottom:100px;max-width:260px;font-family:'Nunito',sans-serif;font-weight:700;color:var(--blue);font-size:.98rem;line-height:1.35}
+  .signs{display:grid;gap:.85rem;margin:1.8rem 0 2rem}
+  .sign{display:flex;gap:.9rem;align-items:center;background:var(--white);padding:1rem 1.2rem;border-radius:16px;border:1px solid var(--line);transition:transform .2s ease,border-color .2s ease}
+  .sign:hover{transform:translateX(6px);border-color:#F4B7B8}
+  .sign .dot{width:30px;height:30px;border-radius:50%;background:#FDEBEC;display:grid;place-items:center;flex-shrink:0}
+  .sign .dot svg{width:16px;height:16px;color:var(--red)}
+
+  /* Treatments */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem}
+  .card{background:var(--white);border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);transition:transform .3s ease, box-shadow .3s ease;transform-style:preserve-3d}
+  .card:hover{box-shadow:var(--shadow)}
+  .card .thumb{height:210px;overflow:hidden;position:relative}
+  .card .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+  .card:hover .thumb img{transform:scale(1.07)}
+  .card .icon{position:absolute;left:1.5rem;bottom:-26px;width:56px;height:56px;border-radius:16px;background:var(--blue);display:grid;place-items:center;box-shadow:0 12px 24px -10px rgba(37,61,109,.7)}
+  .card .icon svg{width:26px;height:26px;color:var(--white)}
+  .card .body{padding:2.4rem 1.6rem 1.8rem}
+  .card h3{font-size:1.3rem;margin-bottom:.6rem}
+  .card p{color:var(--muted);font-size:.98rem}
+
+  /* Internação */
+  .modes-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:3.5rem;align-items:center}
+  .modes-photo{position:relative;height:100%;min-height:460px;border-radius:28px;overflow:hidden;box-shadow:0 30px 60px -25px rgba(0,0,0,.5)}
+  .modes-photo img{position:absolute;inset:-40px 0;width:100%;height:calc(100% + 80px);object-fit:cover}
+  .mode-list{display:grid;gap:1.2rem}
+  .mode{border-radius:var(--radius);padding:2rem 2.1rem;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);transition:background .25s ease}
+  .mode:hover{background:rgba(255,255,255,.11)}
+  .mode h3{font-size:1.45rem;margin-bottom:.6rem}
+  .mode p{color:rgba(255,255,255,.82)}
+  .mode ul{list-style:none;margin-top:1rem;display:grid;gap:.5rem}
+  .mode li{display:flex;gap:.6rem;align-items:flex-start;font-size:.96rem;color:rgba(255,255,255,.9)}
+  .mode li::before{content:"";width:8px;height:8px;border-radius:50%;background:#FF9EA0;margin-top:.6rem;flex-shrink:0}
+  .legal-note{margin-top:1.4rem;font-size:.86rem;color:rgba(255,255,255,.65)}
+
+  /* Steps */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem;counter-reset:step;position:relative}
+  .steps::before{content:"";position:absolute;top:38px;left:8%;right:8%;height:2px;background:repeating-linear-gradient(90deg,var(--line) 0 10px,transparent 10px 18px)}
+  .step{position:relative;padding:0 1rem;text-align:center}
+  .step .num{width:76px;height:76px;margin:0 auto 1.3rem;border-radius:50%;background:var(--white);border:1px solid var(--line);display:grid;place-items:center;font-family:'Nunito',sans-serif;font-weight:800;font-size:1.5rem;color:var(--red);box-shadow:0 14px 30px -16px rgba(37,61,109,.5);position:relative;z-index:1}
+  .step h3{font-size:1.15rem;margin-bottom:.5rem}
+  .step p{font-size:.95rem;color:var(--muted)}
+
+  /* Parallax band */
+  .band{padding:0;height:440px;overflow:hidden;display:flex;align-items:center}
+  .band .bg{position:absolute;inset:-120px 0;background-size:cover;background-position:center;will-change:transform}
+  .band::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(26,45,82,.88) 0%,rgba(26,45,82,.55) 55%,rgba(26,45,82,.15) 100%)}
+  .band .container{position:relative;z-index:1}
+  .band h2{color:var(--white);max-width:620px;font-size:clamp(1.9rem,3.6vw,2.8rem)}
+  .band p{color:rgba(255,255,255,.85);max-width:520px;margin-top:1rem;font-size:1.1rem}
+
+  /* Structure */
+  .gallery{display:grid;grid-template-columns:1.6fr 1fr 1fr;grid-template-rows:250px 250px;gap:1rem;margin-bottom:3rem}
+  .g{border-radius:var(--radius);overflow:hidden;position:relative}
+  .g img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
+  .g:hover img{transform:scale(1.06)}
+  .g:nth-child(1){grid-row:span 2}
+  .g figcaption{position:absolute;left:1rem;bottom:1rem;background:rgba(255,255,255,.94);color:var(--blue);font-size:.82rem;font-weight:700;padding:.45rem .9rem;border-radius:999px;font-family:'Nunito',sans-serif}
+  .features{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem}
+  .feature{display:flex;gap:.9rem;align-items:flex-start}
+  .feature .fi{width:46px;height:46px;border-radius:14px;background:var(--blue-soft);display:grid;place-items:center;flex-shrink:0}
+  .feature svg{width:22px;height:22px;color:var(--blue)}
+  .feature h4{font-size:1.02rem;margin-bottom:.2rem}
+  .feature p{font-size:.9rem;color:var(--muted)}
+
+  /* Testimonials */
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem}
+  .testi{background:var(--white);border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);transition:transform .3s ease, box-shadow .3s ease}
+  .testi:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+  .video{aspect-ratio:4/4.4;position:relative;display:grid;place-items:center;overflow:hidden}
+  .video img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .video::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(26,45,82,.05),rgba(26,45,82,.55))}
+  .play{position:relative;z-index:1;width:72px;height:72px;border-radius:50%;background:rgba(255,255,255,.95);display:grid;place-items:center;box-shadow:0 0 0 10px rgba(255,255,255,.25);transition:transform .25s ease}
+  .testi:hover .play{transform:scale(1.08)}
+  .play svg{width:26px;height:26px;color:var(--red);margin-left:4px}
+  .video small{position:absolute;z-index:1;bottom:1rem;left:1rem;color:var(--white);font-size:.82rem;font-weight:700}
+  .video video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#0d1a33}
+  button.play{border:0;cursor:pointer;padding:0}
+  .video.playing::after,.video.playing .play,.video.playing small{display:none}
+  .video.playing video{z-index:2;object-fit:contain}
+  .testi-body{padding:1.4rem 1.5rem}
+  .testi-body p{font-style:italic;color:var(--muted);font-size:.96rem}
+  .testi-body strong{display:block;margin-top:.8rem;color:var(--blue);font-family:'Nunito',sans-serif}
+
+  [hidden]{display:none!important}
+  /* Gallery / albums */
+  .albums{display:flex;flex-wrap:wrap;gap:.7rem;margin-bottom:2.2rem}
+  .album-tab{display:inline-flex;align-items:center;gap:.55rem;padding:.75rem 1.2rem;border-radius:999px;border:1.5px solid var(--line);background:var(--white);color:var(--blue);font-family:'Nunito',sans-serif;font-weight:700;font-size:.95rem;cursor:pointer;transition:all .25s ease}
+  .album-tab svg{width:18px;height:18px}
+  .album-tab .count{font-size:.75rem;background:var(--blue-soft);color:var(--blue);padding:.1rem .5rem;border-radius:999px;transition:all .25s ease}
+  .album-tab:hover{border-color:var(--blue)}
+  .album-tab.active{background:var(--blue);border-color:var(--blue);color:var(--white);box-shadow:0 12px 24px -12px rgba(37,61,109,.7)}
+  .album-tab.active .count{background:rgba(255,255,255,.2);color:var(--white)}
+  .album-desc{color:var(--muted);margin:-1rem 0 1.8rem;font-size:1rem}
+  .photo-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;grid-auto-flow:dense;gap:1rem}
+  .photo-grid .item{position:relative;border-radius:18px;overflow:hidden;cursor:zoom-in;background:var(--line);opacity:0;transform:translateY(16px) scale(.98);animation:popIn .5s ease forwards}
+  .photo-grid .item:nth-child(6n+1){grid-row:span 2}
+  .photo-grid .item img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+  .photo-grid .item::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(26,45,82,.45));opacity:0;transition:opacity .3s ease}
+  .photo-grid .item:hover img{transform:scale(1.06)}
+  .photo-grid .item:hover::after{opacity:1}
+  .photo-grid .zoom{position:absolute;right:12px;bottom:12px;z-index:1;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.95);display:grid;place-items:center;opacity:0;transform:scale(.8);transition:all .3s ease}
+  .photo-grid .zoom svg{width:18px;height:18px;color:var(--blue)}
+  .photo-grid .item:hover .zoom{opacity:1;transform:none}
+  @keyframes popIn{to{opacity:1;transform:none}}
+  .gallery-empty{grid-column:1/-1;grid-row:span 1;border:2px dashed var(--line);border-radius:18px;display:grid;place-items:center;text-align:center;color:var(--muted);padding:2rem;background:var(--white)}
+  .gallery-empty strong{display:block;color:var(--blue);font-family:'Nunito',sans-serif;margin-bottom:.3rem}
+  .gallery-more{display:flex;justify-content:center;margin-top:2rem}
+
+  /* Lightbox */
+  .lightbox{position:fixed;inset:0;z-index:100;background:rgba(12,22,42,.94);display:none;align-items:center;justify-content:center;padding:4rem 1rem}
+  .lightbox.open{display:flex;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+  .lightbox img{max-width:min(1100px,100%);max-height:100%;border-radius:14px;box-shadow:0 30px 80px rgba(0,0,0,.5);object-fit:contain}
+  .lb-btn{position:absolute;width:52px;height:52px;border-radius:50%;border:none;background:rgba(255,255,255,.12);color:var(--white);display:grid;place-items:center;cursor:pointer;transition:background .2s ease}
+  .lb-btn:hover{background:rgba(255,255,255,.25)}
+  .lb-btn svg{width:24px;height:24px}
+  .lb-close{top:18px;right:18px}
+  .lb-prev{left:18px;top:50%;translate:0 -50%}
+  .lb-next{right:18px;top:50%;translate:0 -50%}
+  .lb-info{position:absolute;bottom:18px;left:50%;translate:-50% 0;color:rgba(255,255,255,.85);font-size:.9rem;font-family:'Nunito',sans-serif;font-weight:600}
+
+  /* FAQ */
+  .faq-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:4rem}
+  .faq-photo{margin-top:2rem;border-radius:var(--radius);overflow:hidden;height:260px;box-shadow:var(--shadow)}
+  .faq-photo img{width:100%;height:100%;object-fit:cover}
+  details{border-bottom:1px solid var(--line);padding:1.3rem 0}
+  summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem;font-weight:700;font-size:1.06rem;color:var(--blue);font-family:'Nunito',sans-serif}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-size:1.6rem;color:var(--red);font-weight:400;transition:transform .2s ease}
+  details[open] summary::after{transform:rotate(45deg)}
+  details p{margin-top:.8rem;color:var(--muted)}
+
+  /* Contact / final CTA */
+  .contact-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:4rem;align-items:center}
+  .contact-grid h2{margin-bottom:1rem;font-size:clamp(2rem,3.8vw,2.9rem)}
+  .contact-points{display:grid;gap:.9rem;margin-top:2rem}
+  .contact-points div{display:flex;gap:.8rem;align-items:center;color:rgba(255,255,255,.9)}
+  .contact-points svg{width:22px;height:22px;color:#FF9EA0;flex-shrink:0}
+  .form-card{background:var(--white);color:var(--ink);border-radius:26px;padding:2.3rem;box-shadow:0 40px 80px -30px rgba(0,0,0,.5)}
+  .form-card h3{font-size:1.5rem;margin-bottom:.3rem}
+  .form-card > p{font-size:.95rem;color:var(--muted);margin-bottom:1.4rem}
+  .quick-form{display:grid;gap:.85rem}
+  .quick-form label{font-size:.82rem;font-weight:700;color:var(--blue);font-family:'Nunito',sans-serif}
+  .quick-form input,.quick-form select{width:100%;padding:.9rem 1rem;border-radius:12px;border:1px solid var(--line);background:var(--gray);font:inherit;color:var(--ink);transition:border-color .2s ease, background .2s ease}
+  .quick-form input:focus,.quick-form select:focus{outline:none;border-color:var(--blue);background:var(--white)}
+  .quick-form .btn{justify-content:center;margin-top:.4rem;width:100%}
+  .quick-form small{font-size:.78rem;color:var(--muted);text-align:center}
+
+  /* Footer */
+  footer{background:var(--blue-deep);color:rgba(255,255,255,.72);padding:64px 0 28px;font-size:.93rem}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:3rem;margin-bottom:2.6rem}
+  footer h4{color:var(--white);font-size:1rem;margin-bottom:1rem}
+  footer li{list-style:none;margin-bottom:.5rem}
+  .crisis{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:1rem 1.2rem;margin-top:1.2rem;font-size:.86rem}
+  .crisis strong{color:var(--white)}
+  .copy{border-top:1px solid rgba(255,255,255,.1);padding-top:1.4rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.8rem}
+
+  /* WhatsApp float */
+  .wa-float{position:fixed;right:22px;bottom:22px;z-index:60;width:62px;height:62px;border-radius:50%;background:var(--green);display:grid;place-items:center;box-shadow:0 12px 28px rgba(37,211,102,.45);animation:pulse 2.4s infinite}
+  .wa-float svg{width:32px;height:32px;color:var(--white)}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}70%{box-shadow:0 0 0 16px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease, transform .8s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    .floaty,.wa-float{animation:none}
+    .reveal{opacity:1;transform:none;transition:none}
+  }
+
+  /* Responsive */
+  @media (max-width:1020px){
+    .menu{display:none}
+    .hero-grid,.family-grid,.faq-grid,.modes-grid,.contact-grid{grid-template-columns:1fr}
+    .hero-visual{height:480px;max-width:560px;width:100%;margin:1rem auto 0}
+    .cards,.testi-grid{grid-template-columns:1fr 1fr}
+    .steps,.features{grid-template-columns:1fr 1fr;row-gap:2.4rem}
+    .steps::before{display:none}
+    .stats-grid{grid-template-columns:1fr 1fr}
+    .stat:nth-child(2){border-right:none}
+    .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+    .gallery{grid-template-columns:1fr 1fr;grid-template-rows:240px 170px 170px}
+    .g:nth-child(1){grid-column:span 2;grid-row:auto}
+    .foot-grid{grid-template-columns:1fr}
+    .modes-photo{min-height:300px}
+    .photo-grid{grid-template-columns:repeat(3,1fr);grid-auto-rows:190px}
+    .faq-grid{gap:2rem}
+  }
+  @media (max-width:620px){
+    section{padding:76px 0}
+    .cards,.testi-grid,.steps,.features{grid-template-columns:1fr}
+    .nav .btn span{display:none}
+    .hero{padding:120px 0 100px}
+    .hero-visual{height:400px}
+    .photo-main{inset:20px 10px 40px 40px}
+    .photo-small{width:140px;height:170px}
+    .card-years{right:-6px}
+    .card-safe{right:-6px;bottom:30px}
+    .glass{padding:.7rem .9rem}
+    .glass .ic{width:34px;height:34px}
+    .sphere.blue{width:80px;height:80px;right:-20px}
+    .ring,.sphere.mini{display:none}
+    .sphere.red{width:60px;height:60px;left:10px}
+    .stack{height:420px}
+    .stack .ph.a{inset:0 40px 60px 0}
+    .stack .ph.b{width:170px;height:170px}
+    .band{height:380px}
+    .photo-grid{grid-template-columns:1fr 1fr;grid-auto-rows:160px;gap:.7rem}
+    .albums{flex-wrap:nowrap;overflow-x:auto;margin-inline:-4%;padding:0 4% .4rem;scrollbar-width:none}
+    .album-tab{flex-shrink:0}
+    .lb-prev,.lb-next{top:auto;bottom:14px;translate:none}
+    .lb-info{bottom:30px}
+    .logo-text strong{font-size:.98rem}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header id="top">
+  <div class="container nav">
+    <a href="#" class="logo" aria-label="Instituto Saúde Mental Neves Teixeira">
+      <div class="logo-mark"><img src="logo-simbolo.png" alt=""></div>
+      <div class="logo-text"><small>Instituto Saúde Mental</small><strong>NEVES TEIXEIRA</strong></div>
+    </a>
+    <nav class="menu">
+      <a href="#tratamentos">Tratamentos</a>
+      <a href="#internacao">Internação</a>
+      <a href="#estrutura">Estrutura</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#duvidas">Dúvidas</a>
+    </nav>
+    <a href="#contato" class="btn btn-primary wa-link" data-msg="Olá! Vim pelo site e gostaria de falar com a equipe da clínica Neves Teixeira.">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.8 11.8 0 0 0 12 0C5.4 0 .1 5.3.1 11.9c0 2.1.6 4.1 1.6 5.9L0 24l6.4-1.7a11.9 11.9 0 0 0 5.6 1.4c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.4-8.3zM12 21.7c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.8 1 1-3.7-.2-.4a9.8 9.8 0 0 1-1.5-5.2C2.1 6.5 6.5 2.1 12 2.1c2.6 0 5.1 1 7 2.9a9.8 9.8 0 0 1 2.9 7c0 5.5-4.4 9.7-9.9 9.7zm5.4-7.3c-.3-.1-1.8-.9-2-1s-.5-.1-.7.1-.8 1-.9 1.2-.3.2-.6.1a8 8 0 0 1-4-3.5c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4s-1 1-1 2.5 1.1 2.9 1.2 3.1 2.1 3.2 5.1 4.5c1.9.8 2.6.9 3.6.7.6-.1 1.8-.7 2-1.4s.2-1.3.2-1.4-.3-.2-.6-.3z"/></svg>
+      <span>Fale conosco</span>
+    </a>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="blob b1" data-depth="-0.02"></div>
+    <div class="blob b2" data-depth="0.03"></div>
+    <div class="grid-dots"></div>
+  </div>
+
+  <div class="container hero-grid">
+    <div class="reveal">
+      <h1>Existe um caminho de volta. <span>E você não precisa percorrê-lo sozinho.</span></h1>
+      <p class="sub">Tratamento humanizado para dependência química, alcoolismo e saúde mental, com acompanhamento médico, psiquiátrico e uma equipe que acolhe o paciente e a família em cada etapa.</p>
+      <div class="hero-ctas">
+        <a href="#contato" class="btn btn-primary wa-link" data-msg="Olá! Vim pelo site e gostaria de saber mais sobre o tratamento para dependência química, alcoolismo e saúde mental.">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.8 11.8 0 0 0 12 0C5.4 0 .1 5.3.1 11.9c0 2.1.6 4.1 1.6 5.9L0 24l6.4-1.7a11.9 11.9 0 0 0 5.6 1.4c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.4-8.3z"/></svg>
+          Falar com a equipe agora
+        </a>
+        <a href="#tratamentos" class="btn btn-outline">Conhecer o tratamento</a>
+      </div>
+      <div class="hero-trust">
+        <div class="avatars">
+          <img src="https://images.pexels.com/photos/7176056/pexels-photo-7176056.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop" alt="">
+          <img src="https://images.pexels.com/photos/7176300/pexels-photo-7176300.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop" alt="">
+          <img src="https://images.pexels.com/photos/2829336/pexels-photo-2829336.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop" alt="">
+        </div>
+        <p><strong>Centenas de famílias</strong><br>já recomeçaram com a gente</p>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal" id="heroVisual">
+      <div class="layer ring" data-depth="0.06"></div>
+      <div class="layer photo-main tilt" data-depth="0.015">
+        <img src="https://images.pexels.com/photos/7579306/pexels-photo-7579306.jpeg?auto=compress&cs=tinysrgb&w=1100" alt="Grupo de pessoas de mãos dadas em uma sessão de terapia">
+      </div>
+      <div class="layer photo-small" data-depth="0.045">
+        <img src="https://images.pexels.com/photos/2829336/pexels-photo-2829336.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Homem caminhando em um campo verde em dia de sol">
+      </div>
+      <div class="layer sphere red floaty" data-depth="0.09"></div>
+      <div class="layer sphere blue floaty d2" data-depth="0.07"></div>
+      <div class="layer sphere mini floaty d3" data-depth="0.11"></div>
+      <div class="layer card-years" data-depth="0.05">
+        <div class="glass floaty d2">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></div>
+          <div><strong>+12 anos</strong><span>transformando vidas</span></div>
+        </div>
+      </div>
+      <div class="layer card-safe" data-depth="0.035">
+        <div class="glass floaty">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+          <div><strong>Atendimento sigiloso</strong><span>para paciente e família</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATS ===== -->
+<section class="stats">
+  <div class="container">
+    <div class="stats-grid reveal">
+      <div class="stat"><strong data-count="12" data-prefix="+">+12</strong><span>anos de experiência</span></div>
+      <div class="stat"><strong>2</strong><span>unidades: feminina e masculina</span></div>
+      <div class="stat"><strong>24h</strong><span>de cuidado e acompanhamento</span></div>
+      <div class="stat"><strong data-count="100" data-suffix="%">100%</strong><span>atendimento humanizado</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAMILY ===== -->
+<section class="family bg-gray">
+  <div class="container family-grid">
+    <div class="stack reveal">
+      <div class="ph a" data-speed="0.04"><img src="https://images.pexels.com/photos/7176301/pexels-photo-7176301.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Terapeuta conversando com paciente e familiar"></div>
+      <div class="ph b" data-speed="-0.05"><img src="https://images.pexels.com/photos/7579174/pexels-photo-7579174.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Grupo de apoio conversando"></div>
+    </div>
+    <div class="reveal">
+      <h2 style="margin-bottom:1rem">Você sente que já tentou de tudo?</h2>
+      <p class="lead">A dependência não afeta só quem usa: ela abala a casa inteira. Se você se identifica com alguma dessas situações, é hora de buscar ajuda especializada.</p>
+      <div class="signs">
+        <div class="sign"><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 8v4M12 16h.01"/></svg></span><p>Promessas de parar que nunca se cumprem</p></div>
+        <div class="sign"><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 8v4M12 16h.01"/></svg></span><p>Mudanças de comportamento, agressividade ou isolamento</p></div>
+        <div class="sign"><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 8v4M12 16h.01"/></svg></span><p>Perda de emprego, dívidas ou sumiço de objetos em casa</p></div>
+        <div class="sign"><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 8v4M12 16h.01"/></svg></span><p>A pessoa não aceita ou não consegue buscar tratamento sozinha</p></div>
+      </div>
+      <a href="#contato" class="btn btn-primary wa-link" data-msg="Olá! Vim pelo site e gostaria de orientação para ajudar um familiar que precisa de tratamento.">Quero orientação para minha família</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TREATMENTS ===== -->
+<section class="bg-white" id="tratamentos">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>Tratamento completo, do diagnóstico à reinserção social</h2>
+      <p class="lead">Cada paciente recebe um plano individual, construído pela nossa equipe médica, psiquiátrica e terapêutica.</p>
+    </div>
+    <div class="cards">
+      <article class="card reveal tilt-soft">
+        <div class="thumb">
+          <img src="https://images.pexels.com/photos/7176056/pexels-photo-7176056.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Jovem em sessão de terapia">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.5 20.5 3.5 13.5a5 5 0 0 1 7-7l7 7a5 5 0 0 1-7 7z"/><path d="m8.5 8.5 7 7"/></svg></div>
+        </div>
+        <div class="body">
+          <h3>Dependência química</h3>
+          <p>Tratamento para dependência de crack, cocaína, maconha e outras substâncias, com desintoxicação assistida e acompanhamento contínuo.</p>
+        </div>
+      </article>
+      <article class="card reveal tilt-soft">
+        <div class="thumb">
+          <img src="https://images.pexels.com/photos/7176055/pexels-photo-7176055.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Terapeuta conversando com paciente">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 22h8M12 15v7M5 2h14l-1.5 9a5.5 5.5 0 0 1-11 0z"/></svg></div>
+        </div>
+        <div class="body">
+          <h3>Alcoolismo</h3>
+          <p>Abordagem médica e terapêutica para interromper o ciclo do álcool, tratar a abstinência com segurança e prevenir recaídas.</p>
+        </div>
+      </article>
+      <article class="card reveal tilt-soft">
+        <div class="thumb">
+          <img src="https://images.pexels.com/photos/7176300/pexels-photo-7176300.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Terapeuta conduzindo sessão em grupo">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M12 5v13"/></svg></div>
+        </div>
+        <div class="body">
+          <h3>Saúde mental</h3>
+          <p>Cuidado para transtornos associados, como depressão e ansiedade, com avaliação e acompanhamento psiquiátrico.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INTERNAÇÃO ===== -->
+<section class="bg-blue" id="internacao">
+  <div class="container modes-grid">
+    <div class="modes-photo reveal">
+      <img data-speed="0.06" src="https://images.pexels.com/photos/7579319/pexels-photo-7579319.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Profissional de saúde mental conduzindo uma conversa em grupo">
+    </div>
+    <div>
+      <div class="reveal" style="margin-bottom:2rem">
+        <h2 style="margin-bottom:1rem">Quando a pessoa aceita, e quando ela ainda não consegue aceitar</h2>
+        <p class="lead">Orientamos a família sobre o melhor caminho para cada caso, sempre com avaliação médica e dentro da legislação.</p>
+      </div>
+      <div class="mode-list">
+        <article class="mode reveal">
+          <h3>Internação voluntária</h3>
+          <p>Quando o próprio paciente reconhece que precisa de ajuda e decide iniciar o tratamento.</p>
+          <ul>
+            <li>Acolhimento e avaliação na chegada</li>
+            <li>Plano terapêutico individual</li>
+          </ul>
+        </article>
+        <article class="mode reveal">
+          <h3>Internação involuntária</h3>
+          <p>Para quando o paciente não consegue buscar tratamento por conta própria e há risco para ele ou para a família.</p>
+          <ul>
+            <li>Avaliação médica e psiquiátrica</li>
+            <li>Orientação completa à família e remoção com segurança e respeito</li>
+          </ul>
+        </article>
+      </div>
+      <p class="legal-note reveal">A internação involuntária é realizada mediante indicação médica e seguindo a legislação brasileira vigente.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STEPS ===== -->
+<section class="bg-gray" id="como-funciona">
+  <div class="container">
+    <div class="section-head center reveal">
+      <h2>Do primeiro contato à nova vida</h2>
+      <p class="lead">Um caminho claro, com a família ao lado em cada etapa.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="num">01</div><h3>Primeiro contato</h3><p>Você conversa com nossa equipe pelo WhatsApp e recebe orientação sobre o caso, com sigilo.</p></div>
+      <div class="step reveal"><div class="num">02</div><h3>Avaliação</h3><p>Avaliação médica e psiquiátrica para definir a modalidade e o plano de tratamento.</p></div>
+      <div class="step reveal"><div class="num">03</div><h3>Tratamento</h3><p>Acolhimento, desintoxicação, terapias individuais e em grupo e atividades de recuperação.</p></div>
+      <div class="step reveal"><div class="num">04</div><h3>Reinserção</h3><p>Preparação para a volta à rotina, com apoio contínuo ao paciente e à família.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PARALLAX BAND ===== -->
+<section class="band">
+  <div class="bg" data-speed="0.25" style="background-image:url('https://images.pexels.com/photos/11550771/pexels-photo-11550771.jpeg?auto=compress&cs=tinysrgb&w=1800')"></div>
+  <div class="container reveal">
+    <h2>A recuperação é possível. Todos os dias, alguém recomeça aqui.</h2>
+    <p>Cada história de volta para casa é a prova de que vale a pena dar o primeiro passo.</p>
+  </div>
+</section>
+
+<!-- ===== STRUCTURE ===== -->
+<section class="bg-white" id="estrutura">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>Um ambiente pensado para a recuperação</h2>
+      <p class="lead">Espaços amplos, alimentação balanceada e uma rotina terapêutica que devolve ao paciente o cuidado consigo mesmo.</p>
+    </div>
+    <div class="gallery reveal">
+      <figure class="g"><img src="https://images.pexels.com/photos/1934072/pexels-photo-1934072.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Área verde ao ar livre"><figcaption>Contato com a natureza</figcaption></figure>
+      <figure class="g"><img src="https://images.pexels.com/photos/3872373/pexels-photo-3872373.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Refeição saudável com legumes"><figcaption>Alimentação balanceada</figcaption></figure>
+      <figure class="g"><img src="https://images.pexels.com/photos/7579310/pexels-photo-7579310.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Terapia em grupo"><figcaption>Terapia em grupo</figcaption></figure>
+      <figure class="g"><img src="https://images.pexels.com/photos/7176057/pexels-photo-7176057.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Atendimento individual"><figcaption>Atendimento individual</figcaption></figure>
+      <figure class="g"><img src="https://images.pexels.com/photos/1640771/pexels-photo-1640771.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Refeições preparadas"><figcaption>Refeições diárias</figcaption></figure>
+    </div>
+    <div class="features">
+      <div class="feature reveal"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span><div><h4>Acompanhamento médico</h4><p>Médico e psiquiatra acompanhando a evolução.</p></div></div>
+      <div class="feature reveal"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><div><h4>Equipe multidisciplinar</h4><p>Psicólogos, terapeutas, enfermagem e monitores.</p></div></div>
+      <div class="feature reveal"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2M7 2v20M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg></span><div><h4>Alimentação balanceada</h4><p>Refeições completas preparadas diariamente.</p></div></div>
+      <div class="feature reveal"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></span><div><h4>Apoio à família</h4><p>Orientação e acompanhamento dos familiares.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALERIA ===== -->
+<section class="bg-gray" id="galeria">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>Conheça mais sobre nós</h2>
+      <p class="lead">Um pouco do nosso dia a dia: o espaço, as refeições, a equipe e os momentos que fazem parte da recuperação.</p>
+    </div>
+    <div class="albums reveal" id="albumTabs" role="tablist"></div>
+    <p class="album-desc" id="albumDesc"></p>
+    <div class="photo-grid" id="photoGrid"></div>
+    <div class="gallery-more"><button class="btn btn-outline" id="moreBtn" hidden>Ver mais fotos</button></div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lb-btn lb-close" id="lbClose" aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+  <button class="lb-btn lb-prev" id="lbPrev" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m15 18-6-6 6-6"/></svg></button>
+  <img id="lbImg" alt="">
+  <button class="lb-btn lb-next" id="lbNext" aria-label="Próxima"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m9 18 6-6-6-6"/></svg></button>
+  <div class="lb-info" id="lbInfo"></div>
+</div>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="bg-white" id="depoimentos">
+  <div class="container">
+    <div class="section-head center reveal">
+      <h2>Quem passou por aqui conta como a vida mudou</h2>
+      <p class="lead">Histórias reais de pacientes e famílias que encontraram um novo começo.</p>
+    </div>
+    <!-- Os vídeos ficam em videos/ (1.mp4, 2.mp4...). Enquanto não houver vídeos, aparecem os cards abaixo. -->
+    <div class="testi-grid" id="testiGrid">
+      <article class="testi reveal">
+        <div class="video"><img src="https://images.pexels.com/photos/1179973/pexels-photo-1179973.jpeg?auto=compress&cs=tinysrgb&w=700" alt=""><div class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div><small>Ex-paciente</small></div>
+        <div class="testi-body"><p>"Espaço para o depoimento em vídeo de um ex-paciente, já publicado no Instagram da clínica."</p><strong>Nome do ex-paciente</strong></div>
+      </article>
+      <article class="testi reveal">
+        <div class="video"><img src="https://images.pexels.com/photos/14925417/pexels-photo-14925417.jpeg?auto=compress&cs=tinysrgb&w=700" alt=""><div class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div><small>Ex-paciente</small></div>
+        <div class="testi-body"><p>"Espaço para o depoimento em vídeo de um ex-paciente, já publicado no Instagram da clínica."</p><strong>Nome do ex-paciente</strong></div>
+      </article>
+      <article class="testi reveal">
+        <div class="video"><img src="https://images.pexels.com/photos/7176301/pexels-photo-7176301.jpeg?auto=compress&cs=tinysrgb&w=700" alt=""><div class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div><small>Família</small></div>
+        <div class="testi-body"><p>"Espaço para o depoimento de um familiar que acompanhou o tratamento."</p><strong>Nome do familiar</strong></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="bg-gray" id="duvidas">
+  <div class="container faq-grid">
+    <div class="reveal">
+      <h2 style="margin-bottom:1rem">Tudo o que a família costuma perguntar</h2>
+      <p class="lead">Ficou alguma dúvida? Nossa equipe responde pelo <a href="#contato" class="wa-link" data-msg="Olá! Vim pelo site e tenho uma dúvida sobre o tratamento e a internação." style="color:inherit;font-weight:700;text-decoration:underline">WhatsApp</a>.</p>
+      <div class="faq-photo"><img src="https://images.pexels.com/photos/7176061/pexels-photo-7176061.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Paciente conversando com terapeuta"></div>
+    </div>
+    <div class="reveal">
+      <details open><summary>Como funciona a internação involuntária?</summary><p>Ela acontece quando o paciente não consegue buscar o tratamento por conta própria. É feita mediante avaliação e indicação médica, seguindo a legislação, e nossa equipe orienta a família em todo o processo.</p></details>
+      <details><summary>A família pode visitar o paciente?</summary><p>Sim. As visitas fazem parte do tratamento e seguem um cronograma definido pela equipe, de acordo com a evolução de cada paciente.</p></details>
+      <details><summary>Quanto tempo dura o tratamento?</summary><p>O tempo varia conforme cada caso e é definido no plano terapêutico, após a avaliação médica e psiquiátrica.</p></details>
+      <details><summary>Vocês atendem homens e mulheres?</summary><p>Sim. Temos unidades separadas para o público feminino e masculino.</p></details>
+      <details><summary>O atendimento é sigiloso?</summary><p>Totalmente. Todas as informações do paciente e da família são tratadas com sigilo e respeito.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="bg-blue" id="contato">
+  <div class="container contact-grid">
+    <div class="reveal">
+      <h2>O primeiro passo pode ser dado hoje.</h2>
+      <p class="lead">Conte rapidamente o que está acontecendo. Nossa equipe responde pelo WhatsApp, com acolhimento e total sigilo.</p>
+      <div class="contact-points">
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Orientação para o seu caso, sem compromisso</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Unidades feminina e masculina</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Equipe médica e multidisciplinar</div>
+      </div>
+    </div>
+    <div class="form-card reveal">
+      <h3>Precisa de ajuda?</h3>
+      <p>Preencha e continue a conversa direto no WhatsApp.</p>
+      <form class="quick-form" id="leadForm">
+        <div>
+          <label for="nome">Seu nome</label>
+          <input id="nome" type="text" placeholder="Como podemos te chamar?" required>
+        </div>
+        <div>
+          <label for="para">A ajuda é para</label>
+          <select id="para">
+            <option>Um familiar</option>
+            <option>Mim mesmo(a)</option>
+            <option>Um(a) amigo(a)</option>
+          </select>
+        </div>
+        <div>
+          <label for="situacao">Situação</label>
+          <select id="situacao">
+            <option>Dependência química</option>
+            <option>Alcoolismo</option>
+            <option>Saúde mental</option>
+            <option>Ainda não sei, preciso de orientação</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.8 11.8 0 0 0 12 0C5.4 0 .1 5.3.1 11.9c0 2.1.6 4.1 1.6 5.9L0 24l6.4-1.7a11.9 11.9 0 0 0 5.6 1.4c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.4-8.3z"/></svg>
+          Receber orientação pelo WhatsApp
+        </button>
+        <small>🔒 Suas informações são tratadas com total sigilo.</small>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="logo" style="margin-bottom:1rem">
+          <div class="logo-mark"><img src="logo-simbolo.png" alt=""></div>
+          <div class="logo-text"><small>Instituto Saúde Mental</small><strong>NEVES TEIXEIRA</strong></div>
+        </div>
+        <p>Referência em tratamento de dependência química, alcoolismo e saúde mental há mais de 12 anos.</p>
+        <div class="crisis"><strong>Em situação de emergência</strong>, ligue 192 (SAMU). Para apoio emocional, o CVV atende 24h pelo 188.</div>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li>WhatsApp: <a href="#contato" class="wa-link" data-msg="Olá! Vim pelo site e gostaria de informações sobre a clínica Neves Teixeira.">(77) 98148-9183</a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&query=Av.%20Governador%20Nilo%20Coelho%2C%2022%20-%20Amamba%C3%AD%2C%20Guanambi%20-%20BA%2C%2046430-000" target="_blank" rel="noopener">Av. Governador Nilo Coelho, 22 – Amambaí</a></li>
+          <li>Guanambi – BA, 46430-000</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Redes sociais</h4>
+        <ul>
+          <li><a href="https://instagram.com/clinicanevesteixeira" target="_blank" rel="noopener">Instagram @clinicanevesteixeira</a></li>
+          <li>Facebook: Clínica Amigos do Resgate</li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© 2026 Instituto Saúde Mental Neves Teixeira. Todos os direitos reservados.</span>
+      <span>Responsável técnico: [nome e registro profissional]</span>
+    </div>
+  </div>
+</footer>
+
+<a href="#contato" class="wa-float wa-link" data-msg="Olá! Vim pelo site e gostaria de mais informações sobre o tratamento na clínica." aria-label="Falar pelo WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.8 11.8 0 0 0 12 0C5.4 0 .1 5.3.1 11.9c0 2.1.6 4.1 1.6 5.9L0 24l6.4-1.7a11.9 11.9 0 0 0 5.6 1.4c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.4-8.3zM12 21.7c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.8 1 1-3.7-.2-.4a9.8 9.8 0 0 1-1.5-5.2C2.1 6.5 6.5 2.1 12 2.1c2.6 0 5.1 1 7 2.9a9.8 9.8 0 0 1 2.9 7c0 5.5-4.4 9.7-9.9 9.7zm5.4-7.3c-.3-.1-1.8-.9-2-1s-.5-.1-.7.1-.8 1-.9 1.2-.3.2-.6.1a8 8 0 0 1-4-3.5c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4s-1 1-1 2.5 1.1 2.9 1.2 3.1 2.1 3.2 5.1 4.5c1.9.8 2.6.9 3.6.7.6-.1 1.8-.7 2-1.4s.2-1.3.2-1.4-.3-.2-.6-.3z"/></svg>
+</a>
+
+<script>
+  // >>> Troque pelo número da clínica (DDI + DDD + número, só dígitos)
+  const WHATSAPP = "5577981489183";
+  const BASE_MSG = "Olá! Vim pelo site e gostaria de orientação sobre tratamento.";
+  const waUrl = (msg) => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`;
+
+  // Cada link usa a mensagem do seu data-msg (ou a padrão)
+  document.querySelectorAll('.wa-link').forEach(a => { a.href = waUrl(a.dataset.msg || BASE_MSG); a.target = "_blank"; a.rel = "noopener"; });
+
+  document.getElementById('leadForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const nome = document.getElementById('nome').value.trim();
+    const para = document.getElementById('para').value;
+    const sit = document.getElementById('situacao').value;
+    const assunto = sit.startsWith('Ainda') ? 'receber orientação sobre qual tratamento é o mais indicado' : `saber sobre o tratamento de ${sit.toLowerCase()}`;
+    window.open(waUrl(`Olá! Meu nome é ${nome}. Vim pelo site e gostaria de ${assunto}. A ajuda é para ${para.toLowerCase()}.`), '_blank');
+  });
+
+  // Header shadow
+  const header = document.getElementById('top');
+  addEventListener('scroll', () => header.classList.toggle('scrolled', scrollY > 30), { passive: true });
+
+  // Reveal on scroll
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, { threshold: .12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const finePointer = matchMedia('(pointer: fine)').matches;
+
+  if (!reduce) {
+    // Mouse parallax on hero layers (3D depth)
+    const hero = document.querySelector('.hero');
+    const layers = hero.querySelectorAll('[data-depth]');
+    let mx = 0, my = 0, sy = 0;
+    const applyHero = () => {
+      layers.forEach(l => {
+        const d = parseFloat(l.dataset.depth);
+        const base = l.classList.contains('ring') ? ' rotateX(62deg) rotateZ(-20deg)' : '';
+        const tilt = l.classList.contains('tilt') ? ` rotateY(${mx * 6}deg) rotateX(${-my * 6}deg)` : '';
+        l.style.transform = `translate3d(${mx * d * 400}px, ${my * d * 400 - sy * d * 4}px, 0)${tilt}${base}`;
+      });
+    };
+    if (finePointer) {
+      hero.addEventListener('mousemove', e => {
+        const r = hero.getBoundingClientRect();
+        mx = (e.clientX - r.left) / r.width - .5;
+        my = (e.clientY - r.top) / r.height - .5;
+        applyHero();
+      });
+      hero.addEventListener('mouseleave', () => { mx = 0; my = 0; applyHero(); });
+    }
+
+    // Scroll parallax for elements with data-speed
+    const speedEls = document.querySelectorAll('[data-speed]');
+    const onScroll = () => {
+      sy = scrollY;
+      if (sy < innerHeight) applyHero();
+      speedEls.forEach(el => {
+        const r = el.parentElement.getBoundingClientRect();
+        if (r.bottom < -200 || r.top > innerHeight + 200) return;
+        const center = r.top + r.height / 2 - innerHeight / 2;
+        el.style.transform = `translate3d(0, ${-center * parseFloat(el.dataset.speed)}px, 0)`;
+      });
+    };
+    addEventListener('scroll', () => requestAnimationFrame(onScroll), { passive: true });
+    onScroll();
+
+    // Soft 3D tilt on treatment cards
+    if (finePointer) {
+      document.querySelectorAll('.tilt-soft').forEach(card => {
+        card.addEventListener('mousemove', e => {
+          const r = card.getBoundingClientRect();
+          const x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+          card.style.transform = `perspective(900px) rotateY(${x * 7}deg) rotateX(${-y * 7}deg) translateY(-6px)`;
+        });
+        card.addEventListener('mouseleave', () => card.style.transform = '');
+      });
+    }
+  }
+
+  // ===== GALERIA =====
+  // As fotos ficam em imagens/<pasta>/ com nomes numerados: 1.jpg, 2.jpg, 3.jpg...
+  // (também aceita .jpeg, .png e .webp). Basta salvar na pasta: a galeria encontra sozinha.
+  const ALBUMS = [
+    { id: 'espaco',     nome: 'Nosso espaço', desc: 'Conheça os ambientes onde o tratamento acontece.', icon: '<path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/>' },
+    { id: 'refeicoes',  nome: 'Refeições', desc: 'Alimentação completa e balanceada, preparada todos os dias.', icon: '<path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2M7 2v20M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/>' },
+    { id: 'atividades', nome: 'Atividades', desc: 'Atividades terapêuticas, esportivas e de lazer praticadas pelos pacientes.', icon: '<circle cx="12" cy="5" r="2"/><path d="m9 20 3-6 3 6M6 8l6 2 6-2M12 10v4"/>' },
+    { id: 'eventos',    nome: 'Eventos', desc: 'Momentos especiais e eventos realizados na clínica.', icon: '<path d="M8 2v4M16 2v4"/><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18"/>' },
+    { id: 'limpeza',    nome: 'Equipe de limpeza', desc: 'Cuidado diário com a higiene e a organização de cada espaço.', icon: '<path d="M12 3v10M8 13h8l1 8H7z"/>' },
+  ];
+  const MAX_FOTOS = 80, POR_PAGINA = 12, EXTS = ['jpg', 'jpeg', 'png', 'webp'];
+  const cache = {};
+  const tabsEl = document.getElementById('albumTabs'), gridEl = document.getElementById('photoGrid');
+  const descEl = document.getElementById('albumDesc'), moreBtn = document.getElementById('moreBtn');
+  let atual = ALBUMS[0].id, mostrando = POR_PAGINA;
+
+  const testar = src => new Promise(res => { const i = new Image(); i.onload = () => res(src); i.onerror = () => res(null); i.src = src; });
+  async function carregarAlbum(id) {
+    if (cache[id]) return cache[id];
+    const fotos = [];
+    for (let n = 1; n <= MAX_FOTOS; n++) {
+      let achou = null;
+      for (const ext of EXTS) { achou = await testar(`imagens/${id}/${n}.${ext}`); if (achou) break; }
+      if (!achou) break;
+      fotos.push(achou);
+    }
+    return (cache[id] = fotos);
+  }
+
+  function renderTabs() {
+    tabsEl.innerHTML = ALBUMS.map(a => `
+      <button class="album-tab${a.id === atual ? ' active' : ''}" role="tab" data-id="${a.id}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">${a.icon}</svg>
+        ${a.nome}${cache[a.id] ? `<span class="count">${cache[a.id].length}</span>` : ''}
+      </button>`).join('');
+    tabsEl.querySelectorAll('.album-tab').forEach(b => b.onclick = () => { atual = b.dataset.id; mostrando = POR_PAGINA; renderTabs(); renderGrid(); });
+  }
+
+  async function renderGrid() {
+    const album = ALBUMS.find(a => a.id === atual);
+    descEl.textContent = album.desc;
+    const fotos = await carregarAlbum(atual);
+    if (album.id !== atual) return;
+    renderTabs();
+    if (!fotos.length) {
+      gridEl.innerHTML = `<div class="gallery-empty"><div><strong>Em breve, novas fotos</strong>Estamos preparando as imagens do álbum ${album.nome.toLowerCase()}.</div></div>`;
+      moreBtn.hidden = true; return;
+    }
+    gridEl.innerHTML = fotos.slice(0, mostrando).map((src, i) => `
+      <figure class="item" data-i="${i}" style="animation-delay:${(i % POR_PAGINA) * 50}ms">
+        <img src="${src}" alt="${album.nome}, foto ${i + 1}" loading="lazy">
+        <span class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3M11 8v6M8 11h6"/></svg></span>
+      </figure>`).join('');
+    gridEl.querySelectorAll('.item').forEach(f => f.onclick = () => abrirLb(+f.dataset.i));
+    moreBtn.hidden = fotos.length <= mostrando;
+  }
+  moreBtn.onclick = () => { mostrando += POR_PAGINA; renderGrid(); };
+
+  // Pré-carrega a contagem de todos os álbuns
+  (async () => { await renderGrid(); for (const a of ALBUMS) { await carregarAlbum(a.id); } renderTabs(); })();
+
+  // Lightbox
+  const lb = document.getElementById('lightbox'), lbImg = document.getElementById('lbImg'), lbInfo = document.getElementById('lbInfo');
+  let lbIndex = 0;
+  function abrirLb(i) { lbIndex = i; mostrarLb(); lb.classList.add('open'); lb.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden'; }
+  function fecharLb() { lb.classList.remove('open'); lb.setAttribute('aria-hidden', 'true'); document.body.style.overflow = ''; }
+  function mostrarLb() {
+    const fotos = cache[atual] || [], album = ALBUMS.find(a => a.id === atual);
+    lbIndex = (lbIndex + fotos.length) % fotos.length;
+    lbImg.src = fotos[lbIndex]; lbImg.alt = `${album.nome}, foto ${lbIndex + 1}`;
+    lbInfo.textContent = `${album.nome} · ${lbIndex + 1} de ${fotos.length}`;
+  }
+  document.getElementById('lbClose').onclick = fecharLb;
+  document.getElementById('lbPrev').onclick = e => { e.stopPropagation(); lbIndex--; mostrarLb(); };
+  document.getElementById('lbNext').onclick = e => { e.stopPropagation(); lbIndex++; mostrarLb(); };
+  lb.addEventListener('click', e => { if (e.target === lb) fecharLb(); });
+  addEventListener('keydown', e => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') fecharLb();
+    if (e.key === 'ArrowLeft') { lbIndex--; mostrarLb(); }
+    if (e.key === 'ArrowRight') { lbIndex++; mostrarLb(); }
+  });
+  let tx = 0;
+  lb.addEventListener('touchstart', e => tx = e.touches[0].clientX, { passive: true });
+  lb.addEventListener('touchend', e => { const dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 50) { lbIndex += dx < 0 ? 1 : -1; mostrarLb(); } });
+
+  // ===== DEPOIMENTOS EM VÍDEO =====
+  // Os vídeos ficam em videos/ com nomes numerados: 1.mp4, 2.mp4, 3.mp4...
+  // (também aceita .webm e .mov). Basta salvar na pasta: a seção encontra sozinha.
+  // Opcional: nome, tipo e frase de cada vídeo, na mesma ordem dos números.
+  const DEPOIMENTOS = [
+    // { tipo: 'Ex-paciente', nome: 'Nome do ex-paciente', texto: 'Frase curta do depoimento' }, // 1.mp4
+    // { tipo: 'Família',     nome: 'Nome do familiar',    texto: 'Frase curta do depoimento' }, // 2.mp4
+  ];
+  const MAX_VIDEOS = 30, VID_EXTS = ['mp4', 'webm', 'mov'];
+  const testarVideo = src => new Promise(res => {
+    const v = document.createElement('video');
+    v.preload = 'metadata'; v.muted = true;
+    v.onloadedmetadata = () => res(src); v.onerror = () => res(null); v.src = src;
+  });
+  (async () => {
+    const videos = [];
+    for (let n = 1; n <= MAX_VIDEOS; n++) {
+      let achou = null;
+      for (const ext of VID_EXTS) { achou = await testarVideo(`videos/${n}.${ext}`); if (achou) break; }
+      if (!achou) break;
+      videos.push(achou);
+    }
+    if (!videos.length) return; // mantém os cards de exemplo
+    const grid = document.getElementById('testiGrid');
+    const playIcon = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
+    grid.innerHTML = videos.map((src, i) => {
+      const d = DEPOIMENTOS[i] || {};
+      const body = (d.nome || d.texto) ? `<div class="testi-body">${d.texto ? `<p>"${d.texto}"</p>` : ''}${d.nome ? `<strong>${d.nome}</strong>` : ''}</div>` : '';
+      return `<article class="testi reveal">
+        <div class="video">
+          <video src="${src}#t=0.5" preload="metadata" playsinline></video>
+          <button class="play" aria-label="Assistir depoimento ${i + 1}">${playIcon}</button>
+          <small>${d.tipo || 'Depoimento'}</small>
+        </div>${body}
+      </article>`;
+    }).join('');
+    const todos = grid.querySelectorAll('video');
+    grid.querySelectorAll('.video').forEach(box => {
+      const v = box.querySelector('video');
+      box.querySelector('.play').onclick = () => {
+        todos.forEach(o => { if (o !== v) o.pause(); });
+        box.classList.add('playing'); v.controls = true; v.play();
+      };
+    });
+    grid.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  })();
+
+  // Count-up on stats
+  const counters = document.querySelectorAll('[data-count]');
+  const co = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if (!en.isIntersecting) return;
+      const el = en.target, end = +el.dataset.count, pre = el.dataset.prefix || '', suf = el.dataset.suffix || '';
+      const t0 = performance.now();
+      const tick = t => { const p = Math.min((t - t0) / 1400, 1); el.textContent = pre + Math.round(end * (1 - Math.pow(1 - p, 3))) + suf; if (p < 1) requestAnimationFrame(tick); };
+      requestAnimationFrame(tick); co.unobserve(el);
+    });
+  }, { threshold: .6 });
+  if (!reduce) counters.forEach(c => co.observe(c));
+</script>
+</body>
+</html>

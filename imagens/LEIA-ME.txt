@@ -1,0 +1,22 @@
+COMO ADICIONAR AS FOTOS DA GALERIA
+==================================
+
+Cada pasta é um álbum da seção "Conheça mais sobre nós":
+
+  espaco/       → Nosso espaço
+  refeicoes/    → Refeições
+  atividades/   → Atividades dos pacientes
+  eventos/      → Eventos realizados na clínica
+  limpeza/      → Equipe de limpeza
+
+Regras:
+1. Salve as fotos com nomes numerados, em sequência, sem pular números:
+   1.jpg, 2.jpg, 3.jpg, 4.jpg ...
+2. Formatos aceitos: .jpg, .jpeg, .png e .webp
+3. A galeria encontra as fotos sozinha. Não precisa mexer no código.
+   Ela para de procurar no primeiro número que faltar
+   (se tiver 1, 2 e 4, a foto 4 não aparece).
+4. Álbum sem fotos mostra a mensagem "Em breve, novas fotos".
+5. Dica: deixe as fotos com no máximo ~1600px de largura para o site carregar rápido.
+
+A ordem dos álbuns, os nomes e as descrições ficam no array ALBUMS, no fim do index.html.
